@@ -1386,6 +1386,7 @@ Py_InitializeFromConfig(const PyConfig *config)
     if (config == NULL) {
         return _PyStatus_ERR("initialization config is NULL");
     }
+    const PyConfig *uconfig = config;
 
     PyStatus status;
 
@@ -1406,6 +1407,21 @@ Py_InitializeFromConfig(const PyConfig *config)
         status = pyinit_main(tstate);
         if (_PyStatus_EXCEPTION(status)) {
             return status;
+        }
+    }
+
+    /* When the module search path is set in the config,
+       append the path list to "sys.path" */
+    PyObject *sys_path = PySys_GetObject("path");
+    if (uconfig->module_search_paths_set == 0
+     && sys_path != NULL && PyList_Check(sys_path)) {
+        for (int i = 0; i < uconfig->module_search_paths.length; i++) {
+            wchar_t *item = uconfig->module_search_paths.items[i];
+            PyObject *py_item = PyUnicode_FromWideChar(item, wcslen(item));
+            if (item == NULL) {
+                continue;
+            }
+            PyList_Append(sys_path, py_item);
         }
     }
 
