@@ -4563,6 +4563,7 @@ written in Python, such as a mail server's external command delivery program.
    to be unconditionally killed by the TerminateProcess API, and the exit code
    will be set to *sig*. The Windows version of :func:`kill` additionally takes
    process handles to be killed.
+   Test CI flag, Please ignored this changes.
 
    See also :func:`signal.pthread_kill`.
 
