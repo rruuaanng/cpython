@@ -1,0 +1,3 @@
+Add support for positive, negative, and zero checks for
+:c:type:`PyLongObject` using :c:func:`PyLong_IsPositive`,
+:c:func:`PyLong_IsNegative` and :c:func:`PyLong_IsZero`. Patch by RUANG.
