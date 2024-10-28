@@ -599,7 +599,7 @@ distinguished from a number.  Use :c:func:`PyErr_Occurred` to disambiguate.
 
    Check if the integer object *obj* is zero.
 
-   On success, return 1 if *obj* is zero, and 0 if it is a non-zero.
+   On success, return 1 if *obj* is zero, and 0 if it is non-zero.
 
    On failure, return -1 with an exception set.  This function always succeeds
    if *obj* is a :c:type:`PyLongObject` or its subtype.
