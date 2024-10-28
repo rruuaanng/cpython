@@ -970,6 +970,12 @@
     added = '3.2'
 [function.PyLong_FromVoidPtr]
     added = '3.2'
+[function.PyLong_IsPositive]
+    added = '3.14'
+[function.PyLong_IsNegative]
+    added = '3.14'
+[function.PyLong_IsZero]
+    added = '3.14'
 [function.PyLong_GetInfo]
     added = '3.2'
 [data.PyLong_Type]
