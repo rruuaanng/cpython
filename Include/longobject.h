@@ -26,6 +26,10 @@ PyAPI_FUNC(size_t) PyLong_AsSize_t(PyObject *);
 PyAPI_FUNC(unsigned long) PyLong_AsUnsignedLong(PyObject *);
 PyAPI_FUNC(unsigned long) PyLong_AsUnsignedLongMask(PyObject *);
 
+PyAPI_FUNC(int) PyLong_IsPositive(PyObject *);
+PyAPI_FUNC(int) PyLong_IsNegative(PyObject *);
+PyAPI_FUNC(int) PyLong_IsZero(PyObject *);
+
 #if !defined(Py_LIMITED_API) || Py_LIMITED_API+0 >= 0x030d0000
 PyAPI_FUNC(int) PyLong_AsInt(PyObject *);
 #endif
