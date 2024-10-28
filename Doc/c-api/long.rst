@@ -571,7 +571,7 @@ distinguished from a number.  Use :c:func:`PyErr_Occurred` to disambiguate.
    .. versionadded:: 3.14
 
 
-.. c:function:: PyLong_IsPositive(PyObject *obj)
+.. c:function:: int PyLong_IsPositive(PyObject *obj)
 
    Check if the integer object *obj* is positive.
 
@@ -583,7 +583,7 @@ distinguished from a number.  Use :c:func:`PyErr_Occurred` to disambiguate.
    .. versionadded:: 3.14
 
 
-.. c:function:: PyLong_IsNegative(PyObject *obj)
+.. c:function:: int PyLong_IsNegative(PyObject *obj)
 
    Check if the integer object *obj* is negative.
 
@@ -595,7 +595,7 @@ distinguished from a number.  Use :c:func:`PyErr_Occurred` to disambiguate.
    .. versionadded:: 3.14
 
 
-.. c:function:: PyLong_IsZero(PyObject *obj)
+.. c:function:: int PyLong_IsZero(PyObject *obj)
 
    Check if the integer object *obj* is zero.
 
